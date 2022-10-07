@@ -1,7 +1,8 @@
+
+from api.Tags_Blog.tag_blog_table import tag_blog
 from api import db
 from datetime import datetime
 
-from api.Tags_Blog.tag_blog_table import tag_blog
 
 class Blog(db.Model):
     id = db.Column(db.Integer,primary_key=True)

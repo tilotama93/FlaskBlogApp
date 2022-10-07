@@ -11,7 +11,6 @@ db = SQLAlchemy()
 
 def create_app():
     app = Flask(__name__)
-
     app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:root@localhost:3306/flaskdatabase'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     CORS(app)
@@ -40,3 +39,4 @@ def create_app():
     app.cli.add_command(create_admin)
 
     return app
+

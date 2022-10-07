@@ -5,7 +5,8 @@ from werkzeug.security import check_password_hash
 
 login=Blueprint('login', __name__)
 
-@login.route('/login', methods=["POST"])
+
+@login.route('/login', methods=["POST","GET"])
 def log_in():
     request_data = request.get_json()
 
@@ -15,4 +16,8 @@ def log_in():
             jwt_token=create_access_token(identity=user.email)
             return jsonify({"token":jwt_token})
     else:
-        return "Invalid email or password",400
+        return "Invalid email or password", 400
+
+
+
+
